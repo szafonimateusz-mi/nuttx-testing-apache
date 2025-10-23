@@ -1,0 +1,84 @@
+[
+  {
+    "metric_name": "osperf",
+    "domain": "system",
+    "dirty": [
+      {
+        "field": "avg",
+        "filter": [
+          {
+            "method": "zero"
+          },
+          {
+            "method": "negative"
+          },
+          {
+            "method": "magnitude",
+            "number": 9
+          }
+        ]
+      }
+    ],
+    "alert": [
+      {
+        "alert_name": "osperf 86v1 ap报警",
+        "baseline": 10086,
+        "board": "sim",
+        "threshold": {
+          "p0": 0.3,
+          "p1": 0.2,
+          "p2": 0.1
+        },
+        "check_sql": "SELECT avg FROM $table"
+      }
+    ],
+    "recipient": {
+      "users": [
+        "zhangchao53",
+        "dengwenqi"
+      ],
+      "internal": [],
+      "external": []
+    },
+    "chart": [
+      {
+        "chart_name": "osperf trend",
+        "chart_type": "line",
+        "define": {
+          "x_axis": "update_time",
+          "x_measurement_unit": "day",
+          "y_axis": "avg",
+          "y_measurement_unit": "kb/s",
+          "filer": [
+            {
+              "field": "fs_type"
+            }
+          ]
+        }
+      },
+      {
+        "chart_name": "osperf pie",
+        "chart_type": "pie",
+        "define": {
+          "group": "name",
+          "aggregation": "sum",
+          "data": "min",
+          "measurement_unit": "s",
+          "filer": []
+        }
+      },
+      {
+        "chart_name": "osperf bar",
+        "chart_type": "bar",
+        "define": {
+          "x_axis": "describe",
+          "x_measurement_unit": "day",
+          "y_axis": "avg",
+          "y_measurement_unit": "kb/s",
+          "aggregation": "avg",
+          "filer": []
+        }
+      }
+    ]
+  }
+]

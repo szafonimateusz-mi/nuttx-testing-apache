@@ -1,0 +1,21 @@
+Block xor, length 0
+0:int:0
+
+Block xor, length 1
+0:int:1
+
+Block xor, length 3
+0:int:3
+
+Block xor, length 4
+0:int:4
+
+Block xor, length 7
+0:int:7
+
+Block xor, length 8
+0:int:8
+
+Block xor, length 16
+0:int:16
+

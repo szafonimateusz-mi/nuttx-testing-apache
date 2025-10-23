@@ -1,0 +1,135 @@
+Constant-flow memcpy from offset: small
+3:int:0:int:5:int:10
+
+Constant-flow memcpy from offset: medium
+3:int:0:int:255:int:32
+
+Constant-flow memcpy from offset: large
+3:int:100:int:339:int:48
+
+mbedtls_ct_memcmp NULL
+0
+
+mbedtls_ct_memcmp len 1
+1:exp:0:int:1:int:0
+
+mbedtls_ct_memcmp len 3
+1:exp:0:int:3:int:0
+
+mbedtls_ct_memcmp len 4
+1:exp:0:int:4:int:0
+
+mbedtls_ct_memcmp len 5
+1:exp:0:int:5:int:0
+
+mbedtls_ct_memcmp len 15
+1:exp:0:int:15:int:0
+
+mbedtls_ct_memcmp len 16
+1:exp:0:int:16:int:0
+
+mbedtls_ct_memcmp len 17
+1:exp:0:int:17:int:0
+
+mbedtls_ct_memcmp len 1 different
+1:int:0:int:1:int:0
+
+mbedtls_ct_memcmp len 17 different
+1:int:0:int:17:int:0
+
+mbedtls_ct_memcmp len 17 different 1
+1:int:1:int:17:int:0
+
+mbedtls_ct_memcmp len 17 different 4
+1:int:4:int:17:int:0
+
+mbedtls_ct_memcmp len 17 different 10
+1:int:10:int:17:int:0
+
+mbedtls_ct_memcmp len 17 different 16
+1:int:16:int:17:int:0
+
+mbedtls_ct_memcmp len 1 offset 1 different
+1:int:0:int:1:int:1
+
+mbedtls_ct_memcmp len 17 offset 1 different
+1:int:0:int:17:int:1
+
+mbedtls_ct_memcmp len 17 offset 1 different 1
+1:int:1:int:17:int:1
+
+mbedtls_ct_memcmp len 17 offset 1 different 5
+1:int:5:int:17:int:1
+
+mbedtls_ct_memcmp len 1 offset 1
+1:exp:0:int:1:int:1
+
+mbedtls_ct_memcmp len 1 offset 2
+1:exp:0:int:1:int:2
+
+mbedtls_ct_memcmp len 1 offset 3
+1:exp:0:int:1:int:3
+
+mbedtls_ct_memcmp len 5 offset 1
+1:exp:0:int:5:int:1
+
+mbedtls_ct_memcmp len 5 offset 2
+1:exp:0:int:5:int:2
+
+mbedtls_ct_memcmp len 5 offset 3
+1:exp:0:int:5:int:3
+
+mbedtls_ct_memcmp len 17 offset 1
+1:exp:0:int:17:int:1
+
+mbedtls_ct_memcmp len 17 offset 2
+1:exp:0:int:17:int:2
+
+mbedtls_ct_memcmp len 17 offset 3
+1:exp:0:int:17:int:3
+
+mbedtls_ct_memcpy_if_eq len 1 offset 0
+2:int:1:int:1:int:0
+
+mbedtls_ct_memcpy_if_eq len 1 offset 1
+2:int:1:int:1:int:1
+
+mbedtls_ct_memcpy_if_eq len 4 offset 0
+2:int:1:int:1:int:0
+
+mbedtls_ct_memcpy_if_eq len 4 offset 1
+2:int:1:int:1:int:1
+
+mbedtls_ct_memcpy_if_eq len 4 offset 2
+2:int:1:int:1:int:2
+
+mbedtls_ct_memcpy_if_eq len 4 offset 3
+2:int:1:int:1:int:3
+
+mbedtls_ct_memcpy_if_eq len 15 offset 0
+2:int:1:int:15:int:0
+
+mbedtls_ct_memcpy_if_eq len 15 offset 1
+2:int:1:int:15:int:1
+
+mbedtls_ct_memcpy_if_eq len 16 offset 0
+2:int:1:int:16:int:0
+
+mbedtls_ct_memcpy_if_eq len 16 offset 1
+2:int:1:int:16:int:1
+
+mbedtls_ct_memcpy_if_eq len 17 offset 0
+2:int:1:int:17:int:0
+
+mbedtls_ct_memcpy_if_eq len 17 offset 1
+2:int:1:int:17:int:1
+
+mbedtls_ct_memcpy_if_eq len 0 not eq
+2:int:0:int:17:int:0
+
+mbedtls_ct_memcpy_if_eq len 5 offset 1 not eq
+2:int:0:int:5:int:1
+
+mbedtls_ct_memcpy_if_eq len 17 offset 3 not eq
+2:int:0:int:17:int:3
+
