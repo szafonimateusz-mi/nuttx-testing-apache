@@ -22,19 +22,18 @@
 import pytest
 
 global_mm_count = 0
+HEAP_REPEAT = 10
 
 
-@pytest.mark.dep_config("CONFIG_TESTING_MM")
-@pytest.mark.cmd_check("mm_main")
-# @pytest.mark.repeat(1000)
+@pytest.mark.dep_config("CONFIG_TESTING_HEAP")
+@pytest.mark.cmd_check("heap_main")
+@pytest.mark.repeat(HEAP_REPEAT)
 def test_mm_sta():
     global global_mm_count
     global_mm_count += 1
-    echo_str = "***test_mm_{}***".format(global_mm_count)
-    pytest.product.sendCommand(echo_str, timeout=5)
-    ret = pytest.product.sendCommand("mm", "TEST COMPLETE", timeout=120)
+    ret = pytest.product.sendCommand("heap", "TEST COMPLETE", timeout=120)
     assert ret == 0
-    if global_mm_count == 1000:
+    if global_mm_count == HEAP_REPEAT:
         global_mm_count = 0
 
 

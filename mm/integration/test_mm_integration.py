@@ -78,8 +78,8 @@ def test_mm_integration(case, expected_list, core, switch_to_core) -> None:
     assert ret == 0
 
 
-@pytest.mark.dep_config("CONFIG_TESTING_MM")
-@pytest.mark.cmd_check("mm_main")
+@pytest.mark.dep_config("CONFIG_TESTING_HEAP")
+@pytest.mark.cmd_check("heap_main")
 def test_mm():
-    ret = pytest.product.sendCommand("mm", "TEST COMPLETE", timeout=30)
+    ret = pytest.product.sendCommand("heap", "TEST COMPLETE", timeout=30)
     assert ret == 0

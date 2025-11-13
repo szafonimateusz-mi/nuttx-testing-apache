@@ -75,11 +75,11 @@ class Test_Sta_Mm:
 
     @pytest.mark.dep_config(
         "CONFIG_KVDB",
-        "CONFIG_TESTING_MM",
+        "CONFIG_TESTING_HEAP",
         "CONFIG_NSH_DISABLE_ECHO",
         "CONFIG_DISABLE_ENVIRON",
     )
-    @pytest.mark.cmd_check("setprop_main", "mm_main", "cmd_echo", "reboot")
+    @pytest.mark.cmd_check("setprop_main", "heap_main", "cmd_echo", "reboot")
     @pytest.mark.repeat(50)
     def test_sta_ramtest_mm(self):
 
@@ -92,7 +92,7 @@ class Test_Sta_Mm:
             # self.common_method(p)
 
             pytest.product.sendCtrlCmd("c")
-            ret = pytest.product.sendCommand("mm", "TEST COMPLETE", timeout=120)
+            ret = pytest.product.sendCommand("heap", "TEST COMPLETE", timeout=120)
             assert ret == 0
         # pytest.product.sendCommand("reboot", timeout=20)
         pytest.product.reboot()
