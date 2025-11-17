@@ -68,7 +68,7 @@ def test_gcov():
     result_path = gcov_conf.get("result_path", "")
     device_conf = pytest.task.get("device", {})
     core_conf = pytest.task.get("cores", {})
-    main_core_conf = core_conf.get("main_core", {})
+    main_core_conf = core_conf.get("core0", {})
     elf_path = main_core_conf.get("elf_path", "")
 
     """ Dump gcov data to the device_conf["9pfs_path"]/gcda directory """

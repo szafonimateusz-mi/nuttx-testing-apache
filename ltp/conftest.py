@@ -145,7 +145,7 @@ def pytest_generate_tests(metafunc):
     # Get ELF path from task configuration
     task_config = load_task_config()
     core_conf = task_config.get("cores", {})
-    main_core_conf = core_conf.get("main_core", {})
+    main_core_conf = core_conf.get("core0", {})
     elf_path = main_core_conf.get("elf_path", "")
 
     if not elf_path:
