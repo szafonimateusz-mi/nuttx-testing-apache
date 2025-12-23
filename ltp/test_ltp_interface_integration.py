@@ -25,6 +25,7 @@ import time
 import pytest
 
 
+@pytest.mark.dep_config("CONFIG_TESTING_LTP")
 def test_ltp_integration(ltp_case, ltp_expected, timeout):
     logging.info(f"case:{ltp_case} expect:{ltp_expected} timeout:{timeout}")
     ret = pytest.product.sendCommand(
