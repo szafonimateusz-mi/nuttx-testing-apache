@@ -113,6 +113,13 @@ def test_fatutf8():
     assert ret == 0
 
 
+@pytest.mark.dep_config("CONFIG_EXAMPLES_USRSOCKTEST")
+@pytest.mark.cmd_check("usrsocktest_main")
+def test_usrsocktest():
+    ret = pytest.product.sendCommand("usrsocktest", "FAILED:0", timeout=60)
+    assert ret == 0
+
+
 def getLog(filename, str1, str2):
     l1 = []
     time.sleep(10)
