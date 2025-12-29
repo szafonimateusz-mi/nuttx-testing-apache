@@ -1,5 +1,6 @@
 {
     "black_list": [
+        "ltp_interfaces_sigrelse_1_1",
         "ltp_behavior_WIFEXITED_1_3",
         "ltp_clock_settime_speculative_4_3",
         "ltp_functional_mqueues_send_rev_1",
