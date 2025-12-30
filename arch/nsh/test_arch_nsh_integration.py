@@ -262,7 +262,7 @@ class TestCat:
 
     @pytest.mark.dep_config("CONFIG_ARCH_HAVE_CPUINFO")
     def test_cat011(self, core, switch_to_core):
-        ret = pytest.product.sendCommand("cat /proc/cpuinfo", "cpu MHz")
+        ret = pytest.product.sendCommand("cat /proc/cpuinfo", "processor")
         assert ret == 0
 
 
