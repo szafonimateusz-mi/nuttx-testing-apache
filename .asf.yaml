@@ -1,5 +1,5 @@
 github:
-  description: "Apache NuttX Testing contains shared test infrastructure for Apache NuttX (incubating)"
+  description: "Apache NuttX Testing contains NTFC test cases for Apache NuttX RTOS"
   homepage: https://nuttx.apache.org/
   features:
     # Enable issues management
@@ -14,6 +14,8 @@ github:
     - mcu
     - microcontroller
     - ci
+    - ntfc
+    - pytest
   enabled_merge_buttons:
     # disable squash button:
     squash:  false
